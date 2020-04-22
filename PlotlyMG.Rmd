@@ -1,0 +1,25 @@
+---
+title: "Iris Data"
+author: "M. Gorka"
+date: "22.04.2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Coursera Assignement with Plotly
+
+The goal of this assignement is to create a web page presentation using R Markdown that features a plot created with Plotly. The webpage has to be hosted on either GitHub Pages, RPubs, or NeoCities. It must contain the date that the document was created, and it must contain a plot created with Plotly.
+
+## Visualizing the Data
+
+```{r plot, echo=FALSE}
+suppressPackageStartupMessages(library(plotly))
+plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, 
+        color = ~Species, size = 10,
+        type = "scatter", mode = "markers") %>%
+  layout(title = "Iris Data")
+```
+
